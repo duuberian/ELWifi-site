@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">ELW</title>
+  <rect x="58" y="58" width="908" height="908" rx="210" fill="#0A1821"/>
+  <g fill="#F2F0E8">
+    <path d="M106 330h236v68H184v72h138v68H184v88h164v68H106V330Z"/>
+    <path d="M395 330h78v296h110v68H395V330Z"/>
+    <path d="M640 330h55l27 238 32-238h50l32 238 27-238h55l-52 364h-65l-32-190-32 190h-65l-52-364Z"/>
+  </g>
+</svg>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a1821" />
+  <meta name="description" content="ELWifi automatically completes captive Wi-Fi login forms on your Mac, with private identities and Keychain storage." />
+  <meta property="og:title" content="ELWifi — Wi-Fi without the paperwork" />
+  <meta property="og:description" content="A private macOS menu-bar app for captive Wi-Fi portals." />
+  <link rel="icon" href="assets/elwifi-logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="styles.css?v=8" />
+  <title>ELWifi — Wi-Fi without the paperwork</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ELW home"><span>ELW</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#install">Install</a>
+    </nav>
+    <a class="header-download" href="downloads/ELWifi.dmg" download>
+      Get the app <span aria-hidden="true">↓</span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="route-line" aria-hidden="true"><span></span></div>
+      <div class="hero-copy">
+        <p class="kicker reveal"><span class="live-dot"></span> Your connection is cleared for takeoff</p>
+        <h1 class="reveal">WI-FI WITHOUT<br />THE <em>PAPERWORK.</em></h1>
+        <p class="hero-intro reveal">ELWifi spots captive portals and handles the repetitive login forms—quietly from your Mac’s menu bar.</p>
+        <div class="hero-actions reveal">
+          <a class="download-button" href="downloads/ELWifi.dmg" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" /></svg>
+            <span><strong>Download for Mac</strong><small>v1.0.0 · 2.7 MB</small></span>
+          </a>
+          <p>macOS 14+<br />Apple silicon</p>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" role="img" aria-label="ELW privately filling an airport Wi-Fi login form">
+        <div class="signal-radar" aria-hidden="true">
+          <i></i><i></i><i></i><b></b>
+        </div>
+        <div class="menu-mockup" aria-hidden="true">
+          <div class="menu-top">
+            <span class="wifi-glyph"><i></i><i></i><i></i></span>
+            <span>ELW</span>
+            <small aria-label="More options">•••</small>
+          </div>
+          <div class="network-row">
+            <div><span class="status-pulse"></span><strong>Airport_Free_WiFi</strong></div>
+            <small>Portal found</small>
+          </div>
+          <div class="autofill-card">
+            <span class="card-label">READY TO CONNECT</span>
+            <strong>We found a login form.</strong>
+            <p>Use a private identity and keep your personal details to yourself.</p>
+            <div class="mock-button">Fill privately <span>→</span></div>
+          </div>
+          <div class="menu-foot"><span>Identity protected</span><span>Keychain <b>✓</b></span></div>
+        </div>
+        <div class="airport-tag tag-one"><span>SFO</span><small>CONNECTED</small></div>
+        <div class="airport-tag tag-two"><span>CDG</span><small>FORM FILLED</small></div>
+      </div>
+
+      <div class="hero-stamp" aria-hidden="true">PRIVATE BY<br />DEFAULT</div>
+    </section>
+
+    <section class="ticker" aria-label="Product benefits">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <div class="ticker-set"><span>NO MORE REPETITIVE FORMS</span><i>✦</i><span>PRIVATE IDENTITIES</span><i>✦</i><span>KEYCHAIN STORAGE</span><i>✦</i><span>MACOS MENU BAR</span><i>✦</i></div>
+          <div class="ticker-set" aria-hidden="true"><span>NO MORE REPETITIVE FORMS</span><i>✦</i><span>PRIVATE IDENTITIES</span><i>✦</i><span>KEYCHAIN STORAGE</span><i>✦</i><span>MACOS MENU BAR</span><i>✦</i></div>
+        </div>
+        <div class="ticker-group" aria-hidden="true">
+          <div class="ticker-set"><span>NO MORE REPETITIVE FORMS</span><i>✦</i><span>PRIVATE IDENTITIES</span><i>✦</i><span>KEYCHAIN STORAGE</span><i>✦</i><span>MACOS MENU BAR</span><i>✦</i></div>
+          <div class="ticker-set"><span>NO MORE REPETITIVE FORMS</span><i>✦</i><span>PRIVATE IDENTITIES</span><i>✦</i><span>KEYCHAIN STORAGE</span><i>✦</i><span>MACOS MENU BAR</span><i>✦</i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section" id="how">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / HOW IT WORKS</p>
+        <h2><span>YOU JOIN.</span><em>ELW CHECKS IN.</em></h2>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <div class="step-number">01</div>
+          <div class="step-icon" aria-hidden="true">
+            <!-- Pixelarticons: wifi (MIT) -->
+            <svg class="feature-icon" viewBox="0 0 24 24">
+              <path d="M11 19h2v2h-2zm-4-3h2v2H7zm8 0h2v2h-2zm-6-2h6v2H9zm-5-1h2v2H4zm2-2h2v2H6zm2-2h8v2H8zm-7 1h2v2H1zm20 0h2v2h-2zM3 8h2v2H3zm2-2h2v2H5zm2-2h10v2H7zm12 4h2v2h-2zm-2-2h2v2h-2zm1 7h2v2h-2zm-2-2h2v2h-2z" />
+            </svg>
+          </div>
+          <h3>Detect</h3>
+          <p>ELWifi notices when a network redirects you to a captive portal.</p>
+          <small>AUTOMATIC</small>
+        </article>
+        <article class="step reveal">
+          <div class="step-number">02</div>
+          <div class="step-icon" aria-hidden="true">
+            <!-- Pixelarticons: list-box-sharp (MIT) -->
+            <svg class="feature-icon" viewBox="0 0 24 24">
+              <path d="M2 2h20v2H2zm4 5h2v2H6zm4 0h8v2h-8zm-4 4h2v2H6zm4 0h8v2h-8zm-4 4h2v2H6zm4 0h8v2h-8zm-8 5h20v2H2zM2 4h2v16H2zm18 0h2v16h-2z" />
+            </svg>
+          </div>
+          <h3>Understand</h3>
+          <p>It recognizes common fields, consent controls, and unusual manual steps.</p>
+          <small>15 FORM FIXTURES TESTED</small>
+        </article>
+        <article class="step reveal">
+          <div class="step-number">03</div>
+          <div class="step-icon" aria-hidden="true">
+            <!-- Pixelarticons: key (MIT) -->
+            <svg class="feature-icon" viewBox="0 0 24 24">
+              <path d="M11 18H3V16H11V18ZM23 15H21V18H17V16H19V13H21V11H11V8H13V9H23V15ZM3 16H1V8H3V16ZM17 16H15V15H13V16H11V13H17V16ZM9 14H5V10H9V14ZM11 8H3V6H11V8Z" />
+            </svg>
+          </div>
+          <h3>Connect</h3>
+          <p>Choose your saved profile or a realistic private identity, then carry on.</p>
+          <small>ONE CLICK</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="privacy section" id="privacy">
+      <div class="privacy-copy reveal">
+        <p class="eyebrow">02 / PRIVACY CABIN</p>
+        <h2>YOUR DETAILS<br />DON’T NEED TO<br /><em>TRAVEL WITH YOU.</em></h2>
+        <p>Private Mode creates a plausible, locale-aware identity for unfamiliar networks. Your saved profiles and portal credentials stay in macOS Keychain—not in a cloud account.</p>
+        <div class="privacy-points">
+          <span><b>01</b> Ephemeral web sessions</span>
+          <span><b>02</b> No portal history saved</span>
+          <span><b>03</b> Manual steps stay manual</span>
+        </div>
+      </div>
+      <div class="passport reveal" aria-label="Illustration of an ELWifi private identity">
+        <div class="passport-edge">ELW / PRIVATE MODE / ELW / PRIVATE MODE /</div>
+        <div class="passport-head"><span>PRIVATE IDENTITY</span><b>ELW</b></div>
+        <div class="passport-body">
+          <div class="portrait"><img src="assets/elwifi-logo.svg" alt="" /></div>
+          <dl>
+            <div><dt>NAME</dt><dd>Jordan Hayes</dd></div>
+            <div><dt>EMAIL</dt><dd>j.hayes@example.com</dd></div>
+            <div><dt>LOCATION</dt><dd>Generated locally</dd></div>
+            <div><dt>STATUS</dt><dd><span></span> Ready to fill</dd></div>
+          </dl>
+        </div>
+        <div class="passport-code">ELW&lt;&lt;PRIVATE&lt;IDENTITY&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br />LOCAL&lt;ONLY&lt;KEYCHAIN&lt;PROTECTED&lt;&lt;&lt;&lt;&lt;&lt;</div>
+        <div class="passport-stamp">NOT<br />YOUR<br />DATA</div>
+      </div>
+    </section>
+
+    <section class="install section" id="install">
+      <div class="install-board reveal">
+        <div class="board-label">03 / ARRIVALS</div>
+        <div class="board-row board-head"><span>STEP</span><span>INSTRUCTION</span><span>STATUS</span></div>
+        <div class="board-row"><b>01</b><strong>Download & open the DMG</strong><span>2.7 MB</span></div>
+        <div class="board-row"><b>02</b><strong>Drag ELWifi to Applications</strong><span>MACOS 14+</span></div>
+        <div class="board-row"><b>03</b><strong>Open ELWifi from your menu bar</strong><span class="boarding">READY</span></div>
+      </div>
+      <aside class="install-cta reveal">
+        <img src="assets/elwifi-logo.svg" alt="ELWifi app icon" />
+        <p class="eyebrow">READY WHEN YOU ARE</p>
+        <h2>SKIP THE<br />SIGN-IN LINE.</h2>
+        <a class="download-button download-button--light" href="downloads/ELWifi.dmg" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" /></svg>
+          <span><strong>Download ELWifi</strong><small>v1.0.0 · Apple silicon</small></span>
+        </a>
+        <small class="gatekeeper-note">This preview build is not notarized. If macOS blocks first launch, right-click the app and choose Open.</small>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top" aria-label="ELW home"><span>ELW</span></a>
+    <p>A small utility for the big, connected world.</p>
+    <div><span>v1.0.0</span><span>© 2026 EL</span></div>
+  </footer>
+
+  <div class="download-toast" role="status" aria-live="polite">
+    <img src="assets/elwifi-logo.svg" alt="" />
+    <span><strong>Your download is starting.</strong><small>See you on the other side of the portal.</small></span>
+  </div>
+  <script src="script.js?v=6"></script>
+</body>
+</html>
