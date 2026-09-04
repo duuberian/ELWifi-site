@@ -15,6 +15,6 @@ chmod +x scripts/build-dmg.sh
 ./scripts/build-dmg.sh
 ```
 
-Every push to `main` runs `.github/workflows/publish.yml`, rebuilds the DMG, commits the refreshed download and checksum, and deploys this directory to GitHub Pages. The stable download URL does not change between releases.
+Every push to `main` runs `.github/workflows/publish.yml`, rebuilds the DMG, and syncs this directory to the public `duuberian/ELWifi-site` GitHub Pages repository. The stable download URL does not change between releases.
 
 When the app version changes, update the visible version copy in `website/index.html`.
