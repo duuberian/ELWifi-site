@@ -1380,3 +1380,35 @@ footer .version {
 .app-icon-small .app-monogram { font-size: 15px; letter-spacing: -.8px; }
 .app-icon-tiny .app-monogram { font-size: 11px; letter-spacing: -.5px; }
 .app-icon-large .app-monogram { font-size: 27px; letter-spacing: -1.4px; }
+
+/* Practical context and transparent product information. */
+.trust-links { margin-top: 16px; font-size: 13px; color: var(--muted); }
+.trust-links a, .trust-section a, .everyday a, .footer-links a { text-decoration: underline; text-underline-offset: 4px; }
+.everyday { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-block: 40px 100px; }
+.everyday h2 { font-size: clamp(32px, 4vw, 48px); margin: 16px 0 24px; }
+.everyday p, .trust-grid p, .policy dd { color: var(--muted); }
+.time-example { padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: #fff8ed; }
+.time-example .time-total { margin: 18px 0; color: var(--ink); }
+.time-total strong { display: block; font-size: 32px; letter-spacing: -.04em; }
+.time-example .example-note { font-size: 13px; margin: 16px 0; }
+.everyday a, .trust-section a { color: var(--blue); }
+.trust-section { padding-bottom: 30px; }
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+.trust-grid article { padding-top: 24px; border-top: 1px solid var(--line); }
+.trust-grid h3, .policy h3 { font-size: 28px; margin: 12px 0 20px; }
+.trust-grid p + p { margin-top: 16px; }
+.trust-grid article > a { display: inline-block; margin-top: 20px; }
+.policy { margin-top: 48px; padding: 32px; border: 1px solid var(--line); border-radius: 24px; }
+.policy dl { margin: 0; }
+.policy dl > div { display: grid; grid-template-columns: 155px 1fr; gap: 24px; padding: 18px 0; border-top: 1px solid var(--line); }
+.policy dt { font-weight: 700; }
+.policy dd { margin: 0; }
+footer { flex-wrap: wrap; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+@media (max-width: 700px) {
+  .everyday, .trust-grid { grid-template-columns: 1fr; gap: 28px; }
+  .everyday { padding-bottom: 60px; }
+  .time-example, .policy { padding: 24px; }
+  .policy dl > div { grid-template-columns: 1fr; gap: 8px; }
+  .trust-links { line-height: 2; }
+}

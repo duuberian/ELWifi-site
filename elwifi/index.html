@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
     <link rel="preload" href="assets/desktop-wallpaper.svg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=22" />
+    <link rel="stylesheet" href="styles.css?v=23" />
     <title>ELWifi — Guest Wi-Fi. Without the busywork.</title>
   </head>
   <body>
@@ -114,7 +114,7 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="ELWifi home"
         ><span class="app-icon app-icon-small"
-          ><span class="app-monogram" aria-hidden="true">ELW</span></span>ELWifi<span class="version" data-app-version>v1.1.0</span></a
+          ><span class="app-monogram" aria-hidden="true">ELW</span></span>ELWifi <span class="version" data-app-version>v1.1.0</span></a
       >
       <nav id="main-nav" aria-label="Main navigation">
         <a href="#how"
@@ -152,10 +152,10 @@
           <span class="status-dot"></span> Small app. Better connections.
         </p>
         <h1>
-          Guest Wi-Fi.<br />Without the <span class="marker">busywork.</span>
+          Guest Wi-Fi.<br /> Without the <span class="marker">busywork.</span>
         </h1>
         <p class="hero-intro">
-          Cafés, airports, hotels. Same old login forms.<br />Let your Mac take
+          Cafés, airports, hotels. Same old login forms.<br /> Let your Mac take
           care of the repetitive part.
         </p>
         <div class="hero-actions">
@@ -169,9 +169,10 @@
           ></a>
         </div>
         <p class="compatibility">
-          macOS 14+ <span>·</span> Apple silicon <span>·</span> <span data-download-size>2.4 MB</span>
+          macOS 14+ <span>·</span> Apple silicon <span>·</span> <span data-download-size>2.3 MB</span>
           <span>·</span> App version <span data-app-version>v1.1.0</span>
         </p>
+        <p class="trust-links"><a href="#privacy-policy">Privacy policy</a> · <a href="#security">Security details</a> · <a href="#support">Developer &amp; support</a></p>
       </section>
       <section
         class="demo-section wrap"
@@ -191,7 +192,7 @@
           </div>
           <div class="demo-notification" hidden>
             <span class="app-icon app-icon-tiny"><span class="app-monogram" aria-hidden="true">ELW</span></span>
-            <div><strong id="notification-title">Wi-Fi login detected</strong><span id="notification-text">Café Guest · Ready to fill</span></div>
+            <div><strong id="notification-title">Wi-Fi login detected</strong> <span id="notification-text">Café Guest · Ready to fill</span></div>
             <button id="demo-fill" type="button">Fill<svg class="icon" aria-hidden="true"><use href="#i-spark" /></svg></button>
           </div>
           <div class="portal-window">
@@ -206,7 +207,7 @@
                   <label class="mock-field" for="demo-name"><span>Full name</span><input id="demo-name" type="text" placeholder="Your name" required maxlength="80" autocomplete="off" /></label>
                   <label class="mock-field" for="demo-email"><span>Email address</span><input id="demo-email" type="email" placeholder="you@example.com" required maxlength="120" autocomplete="off" /></label>
                 </div>
-                <div class="success-content" id="success-content" hidden><span class="success-ring"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><strong>You’re all set.</strong><p>A little less typing. A little more living.</p></div>
+                <div class="success-content" id="success-content" hidden><span class="success-ring"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><strong>You’re all set.</strong> <p>A little less typing. A little more living.</p></div>
                 <button class="demo-action" id="demo-action" type="submit"><span>Connect</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></button>
               </form>
               <p class="demo-disclaimer">Just a demo. Nothing is sent or saved.</p>
@@ -218,7 +219,7 @@
           <p class="desktop-caption"><span class="status-dot"></span><span id="demo-caption">Looking for a Wi-Fi login…</span></p>
         </div>
         <div class="demo-controls">
-          <p>New place. Same little helper.</p>
+          <p>Choose a place. It stays selected until you change it.</p>
           <div class="network-picker" role="group" aria-label="Choose a demo network">
             <button type="button" data-network="cafe" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-coffee" /></svg>Café</button>
             <button type="button" data-network="airport" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-plane" /></svg>Airport</button>
@@ -240,7 +241,7 @@
       </section>
       <section class="features wrap section" id="how">
         <h2 class="section-title">
-          A small app.<br />A very nice
+          A small app.<br /> A very nice
           <span class="drawn-underline">difference.</span>
         </h2>
         <div class="feature-grid">
@@ -251,7 +252,7 @@
               <path class="signal-wave" style="--delay: 140ms" d="M5.5 12a10.5 10.5 0 0 1 13 0" />
               <path class="signal-wave" style="--delay: 280ms" d="M2 8.5a16 16 0 0 1 20 0" />
             </svg>
-            <h3>Finds the<br />sign-in screen.</h3>
+            <h3>Finds the<br /> sign-in screen.</h3>
             <p>Detects captive portals when a network asks you to log in.</p>
           </article>
           <article>
@@ -261,7 +262,7 @@
               <path class="form-line" pathLength="1" style="--delay: 180ms" d="M8 12h5" />
               <path class="form-line" pathLength="1" style="--delay: 360ms" d="M8 16h8" />
             </svg>
-            <h3>Fills the<br />familiar stuff.</h3>
+            <h3>Fills the<br /> familiar stuff.</h3>
             <p>
               Recognizes common fields and consent controls. Less repeat typing.
             </p>
@@ -271,7 +272,7 @@
               <path class="shield-outline" d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
               <path class="shield-check" pathLength="1" d="m8.5 12 2.5 2.5 4.5-5" />
             </svg>
-            <h3>A little less<br />personal.</h3>
+            <h3>A little less<br /> personal.</h3>
             <p>
               Use a plausible private identity on unfamiliar guest networks.
             </p>
@@ -281,7 +282,7 @@
               <g class="key-body"><circle cx="8" cy="8" r="5" />
                 <path d="m11.5 11.5 9 9M16 16l3-3m-1 5 3-3" /></g>
             </svg>
-            <h3>Your details.<br />Your Keychain.</h3>
+            <h3>Your details.<br /> Your Keychain.</h3>
             <p>Saved profiles and credentials stay in macOS Keychain.</p>
           </article>
           <article>
@@ -291,7 +292,7 @@
               <rect class="screen-light icon-detail" x="5" y="5" width="14" height="5" rx="1" stroke="none" fill="currentColor" />
               <path class="screen-menu icon-detail" pathLength="1" d="M6 7h3m3 0h6" />
             </svg>
-            <h3>At home in<br />your menu bar.</h3>
+            <h3>At home in<br /> your menu bar.</h3>
             <p>Out of your way. Right there when the next network needs you.</p>
           </article>
           <article>
@@ -299,12 +300,26 @@
               <path class="bolt-outline" d="m13 2-9 12h7l-1 8 10-13h-8l1-7Z" />
             </svg>
             <h3>
-              Small by design.<br /><span class="drawn-circle"
+              Small by design.<br /> <span class="drawn-circle"
                 >Native to Mac.</span
               >
             </h3>
-            <p>A focused macOS utility. Just <span data-download-size>2.4 MB</span> to download.</p>
+            <p>A focused macOS utility. Just <span data-download-size>2.3 MB</span> to download.</p>
           </article>
+        </div>
+      </section>
+      <section class="everyday wrap" aria-labelledby="everyday-title">
+        <div>
+          <p class="eyebrow">THE LITTLE REPEATS ADD UP.</p>
+          <h2 id="everyday-title">One less form. <br />Every new stop.</h2>
+          <p>A café work session, an airport departure, a hotel check-in. Whenever guest Wi-Fi asks for the same details, ELWifi can take care of the familiar fields.</p>
+        </div>
+        <div class="time-example">
+          <p class="eyebrow">AN ILLUSTRATIVE WEEK</p>
+          <p class="time-total">5 logins × 30 seconds <strong>2½ minutes back.</strong></p>
+          <p>If filling saves you 30 seconds per login, five logins a week add up to about two hours a year.</p>
+          <p class="example-note">An example, not a measured result. Your savings depend on how often you use guest Wi-Fi and what each portal requires.</p>
+          <a href="#demo">Try the filling step yourself ↗</a>
         </div>
       </section>
       <section class="privacy wrap" id="privacy">
@@ -345,7 +360,7 @@
         <div class="privacy-copy">
           <p class="eyebrow">MEET YOUR GUEST-NETWORK ALTER EGO.</p>
           <h2>
-            <span class="notebook-heading">Be our guest.<svg class="notebook-doodle privacy-rays" viewBox="0 0 48 50" aria-hidden="true" focusable="false"><path d="m8 25 9-17M22 32l17-9M24 44l18 2" /></svg></span><br />Not our
+            <span class="notebook-heading">Be our guest.<svg class="notebook-doodle privacy-rays" viewBox="0 0 48 50" aria-hidden="true" focusable="false"><path d="m8 25 9-17M22 32l17-9M24 44l18 2" /></svg></span><br /> Not our
             <span class="marker marker-small">data.</span>
           </h2>
           <p>
@@ -370,9 +385,41 @@
           <p class="privacy-note">Private Mode fills forms. It’s not a VPN.</p>
         </div>
       </section>
+      <section class="trust-section section wrap" aria-labelledby="trust-title">
+        <h2 class="section-title" id="trust-title">A little more peace of mind.</h2>
+        <div class="trust-grid">
+          <article id="security">
+            <p class="eyebrow">SECURITY DETAILS</p>
+            <h3>Your Mac holds your details.</h3>
+            <p>Saved identities, portal credentials, and network assignments use macOS Keychain. Portal pages opened inside ELWifi use an ephemeral web session.</p>
+            <p>Accessibility permission lets ELWifi find and fill login windows in other apps. Location permission lets macOS share your Wi-Fi network name with ELWifi.</p>
+            <p>App updates use Sparkle signature verification. This preview is not yet notarized by Apple; update signing does not replace notarization.</p>
+            <a href="#launch-faq">Read the first-launch guidance ↗</a>
+          </article>
+          <article id="support">
+            <p class="eyebrow">DEVELOPER &amp; SUPPORT</p>
+            <h3>A small, independent project.</h3>
+            <p>ELWifi is maintained by <a href="https://github.com/duuberian">duuberian</a>. It is currently a preview, and feedback helps guide improvements.</p>
+            <p>Found a portal that needs attention, or need help getting started? Open an issue in the public ELWifi website repository. Include your macOS version, ELWifi version, and what happened.</p>
+            <p>GitHub reports are public. Leave out passwords, personal details, and private network information.</p>
+            <a href="https://github.com/duuberian/ELWifi-site/issues">Get support or share feedback ↗</a>
+          </article>
+        </div>
+        <article class="policy" id="privacy-policy" aria-labelledby="policy-title">
+          <p class="eyebrow">PRIVACY POLICY · UPDATED 6 SEPTEMBER 2026</p>
+          <h3 id="policy-title">What stays here. What gets sent.</h3>
+          <dl>
+            <div><dt>On your Mac</dt><dd>Saved profiles, credentials, and network assignments are stored in Keychain. General app preferences are stored locally. Manage or delete saved records in Settings. Removing the app does not automatically remove Keychain records.</dd></div>
+            <div><dt>When you connect</dt><dd>ELWifi checks Apple’s captive-network endpoint to detect a login requirement. Portal pages contact the network operator, which receives any details you submit, including generated identities. Its own privacy policy applies. Private Mode does not hide your IP address or encrypt your traffic.</dd></div>
+            <div><dt>Updates</dt><dd>The app requests an update feed and downloads updates from the ELWifi website. These requests expose ordinary connection information, such as your IP address, to the hosting providers.</dd></div>
+            <div><dt>This website</dt><dd>The demo sends and saves no form entries. This page has no analytics scripts or advertising trackers. The site is served through GitHub Pages and Cloudflare, and loads its font from Google Fonts; those providers receive normal web requests, including your IP address, and may keep service logs.</dd></div>
+            <div><dt>Questions &amp; feedback</dt><dd>Use the <a href="https://github.com/duuberian/ELWifi-site/issues">public support tracker</a> for general privacy questions. Information you choose to include in a public support report is visible to others, so do not include sensitive details.</dd></div>
+          </dl>
+        </article>
+      </section>
       <section class="faq section wrap" id="faq">
         <h2 class="section-title">
-          Good questions.<br /><span class="muted">Straight answers.</span>
+          Good questions.<br /> <span class="muted">Straight answers.</span>
         </h2>
         <div class="faq-list">
           <details>
@@ -411,7 +458,7 @@
               </svg>
             </summary>
             <p>
-              An Apple silicon Mac running macOS 14 or later. Download the <span data-download-size>2.4 MB</span> disk image, open it, drag ELWifi into Applications, then launch
+              An Apple silicon Mac running macOS 14 or later. Download the <span data-download-size>2.3 MB</span> disk image, open it, drag ELWifi into Applications, then launch
               the app. You’ll find it in your menu bar.
             </p>
           </details>
@@ -453,10 +500,10 @@
         <span class="app-icon app-icon-large"
           ><span class="app-monogram" aria-hidden="true">ELW</span></span>
         <h2>
-          Less logging in.<br /><span class="notebook-living">More living.<svg class="notebook-doodle living-scribble" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M5 11C67 3 174 5 291 8 229 10 105 10 31 17c78-4 172-3 239 0" /></svg></span>
+          Less logging in.<br /> <span class="notebook-living">More living.<svg class="notebook-doodle living-scribble" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M5 11C67 3 174 5 291 8 229 10 105 10 31 17c78-4 172-3 239 0" /></svg></span>
         </h2>
         <p>
-          Your next coffee comes with enough decisions.<br />The Wi-Fi form
+          Your next coffee comes with enough decisions.<br /> The Wi-Fi form
           doesn’t need to be one.
         </p>
         <a class="button button-primary" href="downloads/ELWifi.dmg" download
@@ -465,9 +512,9 @@
         >
         <p class="compatibility"><span data-app-version>v1.1.0</span> · macOS 14+ · Apple silicon</p>
         <ol class="install-steps">
-          <li><span>1</span>Open the DMG</li>
-          <li><span>2</span>Drag into Applications</li>
-          <li><span>3</span>Launch. Settle in.</li>
+          <li><span aria-hidden="true">1</span> Open the DMG</li>
+          <li><span aria-hidden="true">2</span> Drag into Applications</li>
+          <li><span aria-hidden="true">3</span> Launch. Settle in.</li>
         </ol>
         <p class="preview-note">
           Preview build · Not yet notarized.
@@ -477,10 +524,11 @@
     </main>
     <footer class="wrap">
       <a class="brand" href="#top" aria-label="ELWifi home"
-        >ELWifi<span class="version" data-app-version>v1.1.0</span></a
+        >ELWifi <span class="version" data-app-version>v1.1.0</span></a
       >
       <p>A little less friction. Everywhere you go.</p>
-      <span>© 2026 EL</span><a href="#top">Back to top ↑</a>
+      <span>© 2026 EL</span>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="#privacy-policy">Privacy policy</a> <a href="#security">Security</a> <a href="#support">Developer &amp; support</a> <a href="#top">Back to top ↑</a></nav>
     </footer>
     <div class="download-toast" role="status" aria-live="polite">
       <span class="toast-icon"
@@ -491,6 +539,6 @@
         ><small>Open the DMG, then drag ELWifi to Applications.</small></span
       >
     </div>
-    <script src="script.js?v=15"></script>
+    <script src="script.js?v=16"></script>
   </body>
 </html>

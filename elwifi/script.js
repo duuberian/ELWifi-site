@@ -41,11 +41,11 @@ document.querySelectorAll("a[download]").forEach((link) => {
     toastTimer = setTimeout(() => toast.classList.remove("show"), 5500);
   });
 });
-document.querySelector("#launch-help").addEventListener("click", () => {
+document.querySelectorAll('a[href="#launch-faq"]').forEach((link) => link.addEventListener("click", () => {
   const warning = document.querySelector("#launch-faq");
   warning.open = true;
   warning.querySelector("summary").focus({ preventScroll: true });
-});
+}));
 
 // Local, editable simulation: nothing is submitted, persisted, or sent.
 const networks = {
@@ -64,7 +64,6 @@ const emailInput = document.querySelector("#demo-email");
 let selectedNetwork = "cafe";
 let state = "detecting";
 let visible = false;
-let rotationTimer;
 let phaseTimer;
 let demoAnimation;
 
@@ -85,19 +84,7 @@ function setState(next) {
   state = next;
   desktop.dataset.state = next;
 }
-function scheduleRotation() {
-  clearTimeout(rotationTimer);
-  if (reducedMotion.matches || !visible || document.hidden) return;
-  rotationTimer = setTimeout(() => {
-    // Never replace a form while someone is editing or using its controls.
-    if (desktop.contains(document.activeElement) || state === "filling") {
-      scheduleRotation();
-      return;
-    }
-    const keys = Object.keys(networks);
-    startNetwork(keys[(keys.indexOf(selectedNetwork) + 1) % keys.length]);
-  }, 14000);
-}
+// Networks change only through the picker; interaction never races a timer.
 function startNetwork(key) {
   clearTimeout(phaseTimer);
   demoAnimation?.cancel();
@@ -134,7 +121,6 @@ function startNetwork(key) {
     notification.hidden = false;
     announce("Login detected. Click Fill to try ELWifi.");
   }, 1100);
-  scheduleRotation();
 }
 fill.addEventListener("click", () => {
   if (state !== "detected") return;
@@ -153,7 +139,6 @@ fill.addEventListener("click", () => {
     document.querySelector("#notification-text").textContent = "Demo details filled. You’re in control.";
     announce("Filled privately. Review, then connect.");
     action.focus({ preventScroll: true });
-    scheduleRotation();
   }, reducedMotion.matches ? 0 : 450);
 });
 form.addEventListener("submit", (event) => {
@@ -170,21 +155,16 @@ form.addEventListener("submit", (event) => {
   document.querySelector("#success-content").hidden = false;
   action.querySelector("span").textContent = "Try again";
   announce("Demo complete. No real connection made.");
-  scheduleRotation();
 });
-form.addEventListener("input", scheduleRotation);
-desktop.addEventListener("focusout", scheduleRotation);
 document.querySelectorAll("button[data-network]").forEach((button) => {
   button.addEventListener("click", () => startNetwork(button.dataset.network));
 });
 reducedMotion.addEventListener("change", () => {
   demoAnimation?.cancel();
-  scheduleRotation();
 });
-document.addEventListener("visibilitychange", () => { updateClock(); scheduleRotation(); });
+document.addEventListener("visibilitychange", updateClock);
 new IntersectionObserver(([entry]) => {
   visible = entry.isIntersecting;
-  scheduleRotation();
 }, { threshold: 0.25 }).observe(desktop);
 startNetwork("cafe");
 
