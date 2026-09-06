@@ -1395,7 +1395,7 @@ footer .version {
 .trust-section { padding-bottom: 30px; }
 .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
 .trust-grid article { padding-top: 24px; border-top: 1px solid var(--line); }
-.trust-grid h3, .policy h3 { font-size: 28px; margin: 12px 0 20px; }
+.trust-grid h3, .policy h3, .trust-grid h2, .policy h2 { font-size: 28px; margin: 12px 0 20px; }
 .trust-grid p + p { margin-top: 16px; }
 .trust-grid article > a { display: inline-block; margin-top: 20px; }
 .policy { margin-top: 48px; padding: 32px; border: 1px solid var(--line); border-radius: 24px; }
@@ -1412,3 +1412,10 @@ footer { flex-wrap: wrap; }
   .policy dl > div { grid-template-columns: 1fr; gap: 8px; }
   .trust-links { line-height: 2; }
 }
+
+.about-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 24px; }
+.about-header .brand { font-size: 24px; }
+.about-navigation { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin-top: 28px; }
+.about-page .trust-section { padding-top: 56px; padding-bottom: 80px; }
+.about-page .section-title { font-size: clamp(34px, 5vw, 56px); }
+footer .about-button { font-size: 13px; }

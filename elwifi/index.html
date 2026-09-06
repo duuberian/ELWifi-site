@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
     <link rel="preload" href="assets/desktop-wallpaper.svg" as="image" />
-    <link rel="stylesheet" href="styles.css?v=23" />
+    <link rel="stylesheet" href="styles.css?v=24" />
     <title>ELWifi — Guest Wi-Fi. Without the busywork.</title>
   </head>
   <body>
@@ -172,7 +172,7 @@
           macOS 14+ <span>·</span> Apple silicon <span>·</span> <span data-download-size>2.3 MB</span>
           <span>·</span> App version <span data-app-version>v1.1.0</span>
         </p>
-        <p class="trust-links"><a href="#privacy-policy">Privacy policy</a> · <a href="#security">Security details</a> · <a href="#support">Developer &amp; support</a></p>
+        <p class="trust-links"><a href="about.html#privacy-policy">Privacy policy</a> · <a href="about.html#security">Security details</a> · <a href="about.html#support">Developer &amp; support</a></p>
       </section>
       <section
         class="demo-section wrap"
@@ -385,38 +385,6 @@
           <p class="privacy-note">Private Mode fills forms. It’s not a VPN.</p>
         </div>
       </section>
-      <section class="trust-section section wrap" aria-labelledby="trust-title">
-        <h2 class="section-title" id="trust-title">A little more peace of mind.</h2>
-        <div class="trust-grid">
-          <article id="security">
-            <p class="eyebrow">SECURITY DETAILS</p>
-            <h3>Your Mac holds your details.</h3>
-            <p>Saved identities, portal credentials, and network assignments use macOS Keychain. Portal pages opened inside ELWifi use an ephemeral web session.</p>
-            <p>Accessibility permission lets ELWifi find and fill login windows in other apps. Location permission lets macOS share your Wi-Fi network name with ELWifi.</p>
-            <p>App updates use Sparkle signature verification. This preview is not yet notarized by Apple; update signing does not replace notarization.</p>
-            <a href="#launch-faq">Read the first-launch guidance ↗</a>
-          </article>
-          <article id="support">
-            <p class="eyebrow">DEVELOPER &amp; SUPPORT</p>
-            <h3>A small, independent project.</h3>
-            <p>ELWifi is maintained by <a href="https://github.com/duuberian">duuberian</a>. It is currently a preview, and feedback helps guide improvements.</p>
-            <p>Found a portal that needs attention, or need help getting started? Open an issue in the public ELWifi website repository. Include your macOS version, ELWifi version, and what happened.</p>
-            <p>GitHub reports are public. Leave out passwords, personal details, and private network information.</p>
-            <a href="https://github.com/duuberian/ELWifi-site/issues">Get support or share feedback ↗</a>
-          </article>
-        </div>
-        <article class="policy" id="privacy-policy" aria-labelledby="policy-title">
-          <p class="eyebrow">PRIVACY POLICY · UPDATED 6 SEPTEMBER 2026</p>
-          <h3 id="policy-title">What stays here. What gets sent.</h3>
-          <dl>
-            <div><dt>On your Mac</dt><dd>Saved profiles, credentials, and network assignments are stored in Keychain. General app preferences are stored locally. Manage or delete saved records in Settings. Removing the app does not automatically remove Keychain records.</dd></div>
-            <div><dt>When you connect</dt><dd>ELWifi checks Apple’s captive-network endpoint to detect a login requirement. Portal pages contact the network operator, which receives any details you submit, including generated identities. Its own privacy policy applies. Private Mode does not hide your IP address or encrypt your traffic.</dd></div>
-            <div><dt>Updates</dt><dd>The app requests an update feed and downloads updates from the ELWifi website. These requests expose ordinary connection information, such as your IP address, to the hosting providers.</dd></div>
-            <div><dt>This website</dt><dd>The demo sends and saves no form entries. This page has no analytics scripts or advertising trackers. The site is served through GitHub Pages and Cloudflare, and loads its font from Google Fonts; those providers receive normal web requests, including your IP address, and may keep service logs.</dd></div>
-            <div><dt>Questions &amp; feedback</dt><dd>Use the <a href="https://github.com/duuberian/ELWifi-site/issues">public support tracker</a> for general privacy questions. Information you choose to include in a public support report is visible to others, so do not include sensitive details.</dd></div>
-          </dl>
-        </article>
-      </section>
       <section class="faq section wrap" id="faq">
         <h2 class="section-title">
           Good questions.<br /> <span class="muted">Straight answers.</span>
@@ -528,7 +496,8 @@
       >
       <p>A little less friction. Everywhere you go.</p>
       <span>© 2026 EL</span>
-      <nav class="footer-links" aria-label="Footer navigation"><a href="#privacy-policy">Privacy policy</a> <a href="#security">Security</a> <a href="#support">Developer &amp; support</a> <a href="#top">Back to top ↑</a></nav>
+      <a class="button button-soft about-button" href="about.html">Privacy, security &amp; support ↗</a>
+      <nav class="footer-links" aria-label="Footer navigation"><a href="about.html#privacy-policy">Privacy policy</a> <a href="about.html#security">Security</a> <a href="about.html#support">Developer &amp; support</a> <a href="#top">Back to top ↑</a></nav>
     </footer>
     <div class="download-toast" role="status" aria-live="polite">
       <span class="toast-icon"
@@ -539,6 +508,6 @@
         ><small>Open the DMG, then drag ELWifi to Applications.</small></span
       >
     </div>
-    <script src="script.js?v=16"></script>
+    <script src="script.js?v=17"></script>
   </body>
 </html>

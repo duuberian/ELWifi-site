@@ -5,16 +5,16 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>ELWifi</title>
         <item>
             <title>1.1.0</title>
-            <pubDate>Sun, 06 Sep 2026 12:12:21 +0000</pubDate>
+            <pubDate>Sun, 06 Sep 2026 12:44:48 +0000</pubDate>
             <link>https://duuberian.com/elwifi/</link>
-            <sparkle:version>1101</sparkle:version>
+            <sparkle:version>1201</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://duuberian.com/elwifi/updates/ELWifi-1101.zip" length="2070743" type="application/octet-stream" sparkle:edSignature="DmsimX1iECCkwOYwd11CiN2VajUyLsFF3Dmjgpc6tKfayIapBpuvhR4XgMyykxxp9UWLdL3/k3UVFJ4n2g2LBA=="></enclosure>
+            <enclosure url="https://duuberian.com/elwifi/updates/ELWifi-1201.zip" length="2070737" type="application/octet-stream" sparkle:edSignature="5u19/GxCoJ76FhTMlG4Q57vf2VF1tg0FnEkSVLb9VJt0MYtmD+Yjzta5XEtX7KsX04QKLS7C8JyknhPW/mVBBQ=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: adwBimImQVNxHXqs5P5mvlSRyIknbHPHRdxTxlCmiH1tDMxtf3nYf7IQ3Wl+zBQ/H53LibyAGjYrVCqzc7hpCw==
+edSignature: ZxDJcBappWj+ijsT9fqeUVvjbMjdOcRVtt75/mxMywpdBjfFavRSK7sGDPQwV2kHoU3eqbHXgpuA5gpWQwXOCA==
 length: 1148
 -->

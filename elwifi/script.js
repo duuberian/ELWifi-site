@@ -41,11 +41,18 @@ document.querySelectorAll("a[download]").forEach((link) => {
     toastTimer = setTimeout(() => toast.classList.remove("show"), 5500);
   });
 });
-document.querySelectorAll('a[href="#launch-faq"]').forEach((link) => link.addEventListener("click", () => {
+function openLinkedFAQ() {
+  if (window.location.hash !== "#launch-faq") return;
   const warning = document.querySelector("#launch-faq");
   warning.open = true;
   warning.querySelector("summary").focus({ preventScroll: true });
+  warning.scrollIntoView({ block: "start" });
+}
+document.querySelectorAll('a[href="#launch-faq"]').forEach((link) => link.addEventListener("click", () => {
+  document.querySelector("#launch-faq").open = true;
 }));
+window.addEventListener("hashchange", openLinkedFAQ);
+openLinkedFAQ();
 
 // Local, editable simulation: nothing is submitted, persisted, or sent.
 const networks = {
