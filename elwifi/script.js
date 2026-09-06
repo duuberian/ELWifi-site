@@ -61,10 +61,8 @@ const notification = document.querySelector(".demo-notification");
 const form = document.querySelector("#portal-form");
 const nameInput = document.querySelector("#demo-name");
 const emailInput = document.querySelector("#demo-email");
-const pause = document.querySelector("#demo-pause");
 let selectedNetwork = "cafe";
 let state = "detecting";
-let paused = reducedMotion.matches;
 let visible = false;
 let rotationTimer;
 let phaseTimer;
@@ -89,7 +87,7 @@ function setState(next) {
 }
 function scheduleRotation() {
   clearTimeout(rotationTimer);
-  if (paused || !visible || document.hidden) return;
+  if (reducedMotion.matches || !visible || document.hidden) return;
   rotationTimer = setTimeout(() => {
     // Never replace a form while someone is editing or using its controls.
     if (desktop.contains(document.activeElement) || state === "filling") {
@@ -179,55 +177,55 @@ desktop.addEventListener("focusout", scheduleRotation);
 document.querySelectorAll("button[data-network]").forEach((button) => {
   button.addEventListener("click", () => startNetwork(button.dataset.network));
 });
-function renderPause() {
-  pause.setAttribute("aria-pressed", String(paused));
-  pause.textContent = paused ? "Resume rotation" : "Pause rotation";
-  scheduleRotation();
-}
-pause.addEventListener("click", () => { paused = !paused; renderPause(); });
 reducedMotion.addEventListener("change", () => {
   demoAnimation?.cancel();
-  if (reducedMotion.matches) { paused = true; renderPause(); }
+  scheduleRotation();
 });
 document.addEventListener("visibilitychange", () => { updateClock(); scheduleRotation(); });
 new IntersectionObserver(([entry]) => {
   visible = entry.isIntersecting;
   scheduleRotation();
 }, { threshold: 0.25 }).observe(desktop);
-renderPause();
 startNetwork("cafe");
 
-// Café-name tiles are illustrative, not official logos or partner claims.
-const cafeNames = [
-  { id: "starbucks", name: "STARBUCKS" },
-  { id: "costa", name: "COSTA", detail: "COFFEE" },
-  { id: "nero", name: "CAFFÈ", detail: "NERO" },
-  { id: "pret", name: "PRET", detail: "A MANGER" },
-  { id: "tims", name: "Tim", detail: "HORTONS" },
+// Original pen sketches of places that commonly offer guest Wi-Fi.
+const dockPlaces = [
+  { id: "cafe", name: "Café", path: "M6 12 23 11 22 23Q15 28 8 23ZM23 13c10-3 9 10 0 8M5 28q10 2 20-1M11 8c-4-4 4-4 1-7M18 7c-3-3 3-4 1-6", echo: "M7 14 9 23q6 4 12 0" },
+  { id: "airport", name: "Airport", path: "m3 14 26-10-9 25-5-10-12-5ZM15 19 29 4M6 23l-3 4m8-3-5 6", echo: "m5 14 10 4L27 6" },
+  { id: "office", name: "Office", path: "m7 29-1-24 18-2 1 26M3 29l26 1M13 29l-1-7 7-1 1 8M10 9l3-.3m5-.5 3-.3M10 15l3-.3m5-.5 3-.3", echo: "M8 6 9 27M7 4l17-2" },
+  { id: "hotel", name: "Hotel", path: "M4 27 5 13m23 14-1-12M5 22l23-1M5 17l22-1v5M9 17v-5l7 1v4M7 7l-1-5m0 2 5-.4m0-2 .5 5M16 5l10-1", echo: "M7 23 26 22M17 14l8-.5" },
+  { id: "library", name: "Library", path: "M16 8Q9 3 3 6l1 20q6-3 12 1 6-5 13-3L28 4Q22 3 16 8Zm0 0v19M7 11l5 1m-5 4 5 1M20 10l5-2m-5 7 5-2", echo: "M2 8 3 28q7-3 13 1l14-3" },
+  { id: "station", name: "Station", path: "M8 3q8-2 16 0l1 19q-8 4-18 0ZM8 8l16-1M8 16l16-1M11 20h1m8-1h1M11 25l-5 6m15-6 5 5M9 28h14", echo: "M10 4 22 3M9 17l13-1" },
 ];
 const dockTrack = document.querySelector(".cafe-dock-track");
-let cafeIndex = 0;
+let placeIndex = 0;
 let dockMoving = false;
-function makeCafeTile(index) {
-  const cafe = cafeNames[index % cafeNames.length];
+function makePlaceTile(index) {
+  const place = dockPlaces[index % dockPlaces.length];
   const tile = document.createElement("span");
   tile.className = "cafe-tile";
-  tile.dataset.cafe = cafe.id;
-  tile.textContent = cafe.name;
-  if (cafe.detail) {
-    const detail = document.createElement("small");
-    detail.textContent = cafe.detail;
-    tile.append(detail);
+  tile.dataset.place = place.id;
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 32 34");
+  svg.setAttribute("aria-hidden", "true");
+  for (const [i, drawing] of [place.path, place.echo].entries()) {
+    const path = document.createElementNS(svg.namespaceURI, "path");
+    path.setAttribute("d", drawing);
+    if (i) path.setAttribute("class", "pencil-echo");
+    svg.append(path);
   }
+  const label = document.createElement("small");
+  label.textContent = place.name;
+  tile.append(svg, label);
   return tile;
 }
 for (let slot = 0; slot < 3; slot++) {
-  const tile = makeCafeTile(cafeIndex++);
+  const tile = makePlaceTile(placeIndex++);
   tile.style.transform = `translateX(${slot * 68}px)`;
   dockTrack.append(tile);
 }
-async function rotateCafeDock() {
-  if (dockMoving || paused || reducedMotion.matches || !visible || document.hidden) return;
+async function rotatePlaceDock() {
+  if (dockMoving || reducedMotion.matches || !visible || document.hidden || dockTrack.matches(":hover")) return;
   dockMoving = true;
   const outgoing = dockTrack.firstElementChild;
   try {
@@ -245,7 +243,7 @@ async function rotateCafeDock() {
         { transform: `translateX(${slot * 68}px)` },
       ], { duration: 420, easing: "cubic-bezier(.22,1,.36,1)" });
     });
-    const incoming = makeCafeTile(cafeIndex++);
+    const incoming = makePlaceTile(placeIndex++);
     incoming.style.transform = "translateX(136px)";
     dockTrack.append(incoming);
     await incoming.animate([
@@ -258,7 +256,7 @@ async function rotateCafeDock() {
     dockMoving = false;
   }
 }
-setInterval(rotateCafeDock, 1000);
+setInterval(rotatePlaceDock, 1000);
 
 // Optional enhancement: vendored MIT Rough Notation. Core functionality never
 // depends on this import or on Google Fonts being available.
@@ -329,67 +327,31 @@ async function setupAnnotations() {
 }
 setupAnnotations();
 
-// A one-pass walkthrough. Editing takes over immediately from the animation.
-const profileForm = document.querySelector("#profile-demo-form");
-const profileLogin = document.querySelector("#profile-login");
-const profileName = document.querySelector("#profile-name");
-const profileEmail = document.querySelector("#profile-email");
-const profileFill = document.querySelector("#profile-fill");
-let profileTimers = [];
-let profileValues;
-function stopProfileAnimation() {
-  profileTimers.forEach(clearTimeout);
-  profileTimers = [];
-}
-function profileLater(callback, delay) {
-  profileTimers.push(setTimeout(callback, delay));
-}
-function revealProfileLogin() {
-  stopProfileAnimation();
-  profileValues = { name: profileName.value, email: profileEmail.value };
-  profileForm.hidden = true;
-  profileLogin.hidden = false;
-  document.querySelector("#profile-step").textContent = "02 / A LOGIN APPEARS";
-  if (!reducedMotion.matches) profileLogin.animate([{ opacity: 0, translate: "0 8px" }, { opacity: 1, translate: "0 0" }], { duration: 450, easing: "ease-out" });
-}
-function fillProfileLogin() {
-  stopProfileAnimation();
-  document.querySelector("#profile-result-name").textContent = profileValues.name;
-  document.querySelector("#profile-result-email").textContent = profileValues.email;
-  document.querySelector("#profile-result-status").textContent = "Filled from your profile. That’s it.";
-  document.querySelector("#profile-step").textContent = "03 / ALREADY FILLED";
-  profileFill.textContent = "Filled";
-  profileFill.disabled = true;
-  if (!reducedMotion.matches) document.querySelectorAll(".profile-result").forEach((field, index) => field.animate([{ background: "#dce6d6" }, { background: "#fffaf2" }], { duration: 700, delay: index * 150 }));
-}
-function resetProfileDemo(autoplay = false) {
-  stopProfileAnimation();
-  profileForm.hidden = false;
-  profileLogin.hidden = true;
-  profileForm.reset();
-  profileFill.disabled = false;
-  profileFill.textContent = "Fill";
-  document.querySelector("#profile-step").textContent = "01 / YOUR PROFILE";
-  document.querySelector("#profile-result-name").textContent = "Your name";
-  document.querySelector("#profile-result-email").textContent = "Your email";
-  document.querySelector("#profile-result-status").textContent = "One click. Your details, filled in.";
-  if (!autoplay || reducedMotion.matches) return;
-  let delay = 650;
-  for (const [field, value] of [[profileName, "Jordan Hayes"], [profileEmail, "j.hayes@example.com"]]) {
-    [...value].forEach((_, index) => { profileLater(() => { field.value = value.slice(0, index + 1); }, delay); delay += 65; });
-    delay += 300;
+// A gentle pull toward the pointer, with no rotation or layout changes.
+const identityArt = document.querySelector(".privacy-art");
+const identityCard = document.querySelector(".identity-card");
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+let cardFrame;
+function resetIdentityCard() {
+  cancelAnimationFrame(cardFrame);
+  for (const property of ["--card-x", "--card-y", "--card-scale-x", "--card-scale-y"]) {
+    identityCard.style.removeProperty(property);
   }
-  profileLater(() => { revealProfileLogin(); profileLater(fillProfileLogin, 1800); }, delay + 800);
 }
-profileForm.addEventListener("focusin", stopProfileAnimation);
-profileForm.addEventListener("input", stopProfileAnimation);
-profileForm.addEventListener("submit", (event) => {
-  event.preventDefault(); revealProfileLogin(); profileFill.focus({ preventScroll: true });
+identityArt.addEventListener("pointermove", (event) => {
+  if (reducedMotion.matches || !finePointer.matches || event.pointerType === "touch") return;
+  const bounds = identityArt.getBoundingClientRect();
+  const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
+  const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
+  cancelAnimationFrame(cardFrame);
+  cardFrame = requestAnimationFrame(() => {
+    identityCard.style.setProperty("--card-x", `${x * 7}px`);
+    identityCard.style.setProperty("--card-y", `${y * 5}px`);
+    identityCard.style.setProperty("--card-scale-x", String(1 + Math.abs(x) * 0.025));
+    identityCard.style.setProperty("--card-scale-y", String(1 + Math.abs(y) * 0.018));
+  });
 });
-profileFill.addEventListener("click", fillProfileLogin);
-document.querySelector("#profile-replay").addEventListener("click", () => resetProfileDemo(true));
-reducedMotion.addEventListener("change", stopProfileAnimation);
-const profileObserver = new IntersectionObserver(([entry]) => {
-  if (entry.isIntersecting) { resetProfileDemo(true); profileObserver.disconnect(); }
-}, { threshold: 0.5 });
-profileObserver.observe(document.querySelector(".profile-demo"));
+identityArt.addEventListener("pointerleave", resetIdentityCard);
+identityArt.addEventListener("pointercancel", resetIdentityCard);
+reducedMotion.addEventListener("change", resetIdentityCard);
+finePointer.addEventListener("change", resetIdentityCard);
