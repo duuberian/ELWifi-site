@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="260" viewBox="0 0 360 260" fill="none">
+  <defs>
+    <linearGradient id="edge" x1="180" y1="30" x2="180" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66854e"/><stop offset="1" stop-color="#335137"/>
+    </linearGradient>
+    <linearGradient id="face" x1="110" y1="38" x2="238" y2="226" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e0f1bd"/><stop offset=".35" stop-color="#b8d594"/><stop offset=".72" stop-color="#8cb46d"/><stop offset="1" stop-color="#628c50"/>
+    </linearGradient>
+    <linearGradient id="bevel" x1="180" y1="25" x2="180" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#efffd9"/><stop offset="1" stop-color="#a7c78b"/>
+    </linearGradient>
+    <g id="arcs" stroke-width="27" stroke-linecap="round">
+      <path d="M57 83a190 190 0 0 1 246 0"/>
+      <path d="M96 127a130 130 0 0 1 168 0"/>
+      <path d="M136 171a68 68 0 0 1 88 0"/>
+    </g>
+  </defs>
+  <!-- Symmetric geometry; extruded downwards so the optical center stays fixed. -->
+  <g stroke="url(#edge)">
+    <use href="#arcs" transform="translate(0 9)"/>
+    <use href="#arcs" transform="translate(0 5)"/>
+  </g>
+  <circle cx="180" cy="219" r="17" fill="#38573a"/>
+  <circle cx="180" cy="215" r="17" fill="#5b7f47"/>
+  <use href="#arcs" stroke="url(#bevel)"/>
+  <g stroke="url(#face)" stroke-width="24" stroke-linecap="round" transform="translate(0 1.5)">
+    <path d="M57 83a190 190 0 0 1 246 0"/>
+    <path d="M96 127a130 130 0 0 1 168 0"/>
+    <path d="M136 171a68 68 0 0 1 88 0"/>
+  </g>
+  <circle cx="180" cy="210" r="17" fill="url(#bevel)"/>
+  <circle cx="180" cy="211.5" r="15.5" fill="url(#face)"/>
+</svg>

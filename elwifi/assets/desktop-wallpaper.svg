@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="840" viewBox="0 0 1440 840" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="720" y1="0" x2="720" y2="840" gradientUnits="userSpaceOnUse"><stop stop-color="#91cdd5"/><stop offset=".55" stop-color="#bdded8"/><stop offset="1" stop-color="#f2d6ba"/></linearGradient>
+    <linearGradient id="far" x1="950" y1="210" x2="700" y2="740" gradientUnits="userSpaceOnUse"><stop stop-color="#548d9d"/><stop offset="1" stop-color="#234e70"/></linearGradient>
+    <linearGradient id="sand" x1="390" y1="300" x2="690" y2="840" gradientUnits="userSpaceOnUse"><stop stop-color="#f5c397"/><stop offset=".6" stop-color="#d6957d"/><stop offset="1" stop-color="#b97672"/></linearGradient>
+    <linearGradient id="ocean" x1="1020" y1="510" x2="660" y2="950" gradientUnits="userSpaceOnUse"><stop stop-color="#36859a"/><stop offset="1" stop-color="#173654"/></linearGradient>
+    <linearGradient id="near" x1="100" y1="560" x2="500" y2="970" gradientUnits="userSpaceOnUse"><stop stop-color="#224f6f"/><stop offset="1" stop-color="#142d48"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#fff3d6" stop-opacity=".8"/><stop offset="1" stop-color="#fff3d6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1440v840H0z"/>
+  <circle cx="1080" cy="160" r="270" fill="url(#sun)"/>
+  <path d="M0 410C210 450 316 380 490 330 690 273 863 391 1040 323 1239 246 1284 158 1440 185V840H0Z" fill="url(#far)"/>
+  <path d="M0 276C190 295 226 438 437 490 643 541 814 462 984 488 1195 520 1265 654 1440 653V840H0Z" fill="url(#sand)"/>
+  <path d="M1440 403C1244 405 1175 557 1003 579 814 603 759 579 626 650 523 705 592 797 720 840H1440Z" fill="url(#ocean)"/>
+  <path d="M0 548C180 538 247 615 391 646 566 682 473 778 729 840H0Z" fill="url(#near)"/>
+  <path d="M1440 405C1244 407 1175 559 1003 581 814 605 759 581 626 652" stroke="#a3d9d5" stroke-opacity=".3" stroke-width="2"/>
+</svg>
